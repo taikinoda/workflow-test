@@ -12,4 +12,4 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - run: ${{ contains(github.event.pull_request.labels.*.name, 'sample-label') && 'sample-label' || 'nothing' }}
+      - run: echo ${{ contains(github.event.pull_request.labels.*.name, 'sample-label') && 'sample-label' || 'nothing' }}

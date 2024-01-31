@@ -2,7 +2,7 @@ name: workflow call
 
 on:
   workflow_call:
-    input:
+    inputs:
       sample:
         type: string
         required: true

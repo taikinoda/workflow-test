@@ -17,6 +17,6 @@ jobs:
   job2:
     needs:
       - job1
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ github.event.pull_request.head.sha }}
+    uses: ./.github/workflows/workflow_call
+    with:
+      sample: ${{ contains(github.event.pull_request.labels.*.name, 'sample-label') && 'sample-label' || 'nothing' }}

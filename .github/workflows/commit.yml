@@ -15,12 +15,8 @@ jobs:
       - run: echo $GITHUB_SHA
 
   job2:
-    if: github.event.pull_request.merged == true
     needs:
       - job1
     runs-on: ubuntu-latest
     steps:
-      - run: |
-        if ${{ contains( github.evnent.pull_request.labels.*.name, 'sample-label' ) }}; then
-          echo 'sample-label'
-        fi
+      - run: echo ${{ github.event.pull_request.head.sha }}

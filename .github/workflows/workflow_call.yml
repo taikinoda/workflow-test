@@ -6,7 +6,7 @@ on:
       sample:
         type: string
         required: true
-        default: "aaa"
+        default: "aaaa"
 
 jobs:
   hello:

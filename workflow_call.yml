@@ -1,0 +1,17 @@
+name: workflow call
+
+on:
+  workflow_call:
+    input:
+      sample:
+        type: string
+        required: true
+        default: "aaa"
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: helloo
+        run: |
+          echo ${{ inputs.sample }}

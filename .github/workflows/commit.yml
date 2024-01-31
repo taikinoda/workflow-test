@@ -17,6 +17,6 @@ jobs:
   job2:
     needs:
       - job1
-    uses: ./.github/workflows/workflow_call
+    uses: ./.github/workflows/workflow_call.yml
     with:
       sample: ${{ contains(github.event.pull_request.labels.*.name, 'sample-label') && 'sample-label' || 'nothing' }}
